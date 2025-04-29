@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://journal-backend-8lmg.onrender.com',
+  baseURL: 'https://journal-backend-8lmg.onrender.com/api',
 });
 
 instance.interceptors.request.use((config) => {
