@@ -1,7 +1,7 @@
  # JOURNAL APP
 
 ## 🌍 About the Project
-This project is made for user to add / edit / view / delete their personal joounals!
+This project is made for user to add / edit / view / delete their personal journals!
 
 
 
