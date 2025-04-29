@@ -1,12 +1,39 @@
-# React + Vite
+ # JOURNAL APP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🌍 About the Project
+This project is made for user to add / edit / view / delete their personal joounals!
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## ✨ Features
+- Toggle dark and light mode
+- JWT authentication
+- Chatbot Integration using gemini API
+- User name display on dashboard page
+- Animated text on home page
+- Dashboard/Home button toggle future
+- Scroll to top button for better user experience
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+<!--line-->
+ 
+## 🚀 Getting Started
+
+### **1️⃣ Clone the Repository**
+```sh
+git clone https://github.com/sayanp607/journal-frontend.git
+cd  journal-frontend
+```
+
+### **2️⃣ Install Dependencies**
+```sh
+npm install
+```
+
+### **3️⃣ Run the Project**
+```sh
+npm run dev
+```
+
+Now, visit `http://localhost:5173` to see the project in action! 🎉
+
