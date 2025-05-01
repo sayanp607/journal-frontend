@@ -8,6 +8,12 @@ html, body {
   padding: 20px;
   
 }
+.timestamp {
+  font-size: .95rem;
+  color: rgb(14, 13, 13);
+  font-weight:600;
+}
+
 
 .journal-form {
   display: flex;

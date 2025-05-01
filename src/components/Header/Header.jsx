@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation ,useNavigate} from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import "./Header.css";
@@ -6,8 +6,13 @@ import "./Header.css";
 const Header =({ toggleDarkMode, darkMode })=> {
   const { token, logout } = useContext(AuthContext);
   const location = useLocation();
-  
+  const navigate = useNavigate();
+
   const isDashboard = location.pathname === "/dashboard";
+  const handleLogout = () => {
+    logout();           
+    navigate("/login");   
+  };
 
   return (
     <header className="header">
@@ -27,7 +32,7 @@ const Header =({ toggleDarkMode, darkMode })=> {
             >
               {isDashboard ? "Home" : "Dashboard"}
             </Link>
-            <button onClick={logout} className="nav-button">Logout</button>
+            <button onClick={handleLogout} className="nav-button">Logout</button>
           </>
         )}
         <button onClick={toggleDarkMode} className="dark-mode-toggle">

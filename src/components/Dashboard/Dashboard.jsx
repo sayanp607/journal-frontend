@@ -24,7 +24,7 @@ function DashboardPage() {
   const [editingJournalId, setEditingJournalId] = useState(null);
 
   const api = axios.create({
-    baseURL: "http://localhost:5000/api/journals", 
+    baseURL: "http://localhost:5000/api/journals",
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -84,6 +84,13 @@ function DashboardPage() {
       otherComments: journal.otherComments,
     });
     setEditingJournalId(journal._id);
+  };
+  const formatDate = (isoString) => {
+    const date = new Date(isoString);
+    return {
+      date: date.toLocaleDateString(),
+      time: date.toLocaleTimeString(),
+    };
   };
 
   const handleDelete = async (id) => {
@@ -171,9 +178,6 @@ function DashboardPage() {
             {editingJournalId ? "Update Journal" : "Add Journal"}
           </button>
         </form>
-       
-
-       
 
         <div className="journal-list">
           <h1>Your Journals</h1>
@@ -196,6 +200,31 @@ function DashboardPage() {
                 <p>
                   <strong>Comments:</strong> {journal.otherComments}
                 </p>
+                {(() => {
+                  const created = formatDate(journal.createdAt);
+                  const updated = formatDate(journal.updatedAt);
+                  return (
+                    <>
+                      <p className="timestamp">
+                        <em>Date: {created.date}</em>
+                      </p>
+                      <p className="timestamp">
+                        <em>Time: {created.time}</em>
+                      </p>
+                      {journal.updatedAt !== journal.createdAt && (
+                        <>
+                          <p className="timestamp">
+                            <em>Updated Date: {updated.date}</em>
+                          </p>
+                          <p className="timestamp">
+                            <em>Updated Time: {updated.time}</em>
+                          </p>
+                        </>
+                      )}
+                    </>
+                  );
+                })()}
+
                 <div className="actions">
                   <button onClick={() => handleEdit(journal)}>Edit</button>
                   <button onClick={() => handleDelete(journal._id)}>
