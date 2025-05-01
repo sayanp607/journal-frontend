@@ -24,7 +24,7 @@ function DashboardPage() {
   const [editingJournalId, setEditingJournalId] = useState(null);
 
   const api = axios.create({
-    baseURL: "http://localhost:5000/api/journals",
+    baseURL: "http://localhost:5000/api/journals", 
     headers: {
       Authorization: `Bearer ${token}`,
     },
